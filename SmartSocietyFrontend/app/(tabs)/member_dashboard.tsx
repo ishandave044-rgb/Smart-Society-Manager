@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function MemberDashboard() {
@@ -32,7 +33,10 @@ export default function MemberDashboard() {
             </View>
             <View className="h-[1px] bg-gray-100 mb-3" />
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity
+              onPress={() => router.push("/Member feat/WelcomePage")}
+              className="flex-row items-center"
+            >
               <View className="bg-green-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="person" size={18} color="#16A34A" />
               </View>
@@ -72,7 +76,10 @@ export default function MemberDashboard() {
             </View>
             <View className="h-[1px] bg-gray-100 mb-3" />
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity
+              onPress={() => router.push("/Member feat/EventsSection")}
+              className="flex-row items-center"
+            >
               <View className="bg-blue-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="time" size={18} color="#2563EB" />
               </View>
@@ -112,7 +119,9 @@ export default function MemberDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity
+            onPress={() => router.push("/Member feat/PaymentsSection")}
+             className="flex-row items-center">
               <View className="bg-blue-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="cash" size={18} color="#2563EB" />
               </View>
@@ -162,7 +171,9 @@ export default function MemberDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity
+            onPress={() => router.push("/Member feat/MemberComplaintForm")}
+             className="flex-row items-center">
               <View className="bg-red-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="person" size={18} color="#DC2626" />
               </View>
@@ -205,7 +216,9 @@ export default function MemberDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity 
+            onPress={() => router.push('/Member feat/MemberNoticesPage')}
+            className="flex-row items-center">
               <View className="bg-orange-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="notifications" size={18} color="#EA580C" />
               </View>

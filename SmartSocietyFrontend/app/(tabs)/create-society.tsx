@@ -393,7 +393,6 @@ export default function CreateSociety() {
           Back
         </Text>
       </TouchableOpacity>
-
     </ScrollView>
   );
 }

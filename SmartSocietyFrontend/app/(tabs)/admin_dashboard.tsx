@@ -43,7 +43,7 @@ export default function AdminDashboard() {
 
             {/* Content Row */}
             <TouchableOpacity
-              onPress={() => router.push('/Admin feat/MemberScreen')}
+              onPress={() => router.push('/Admin feat/Member/MemberScreen')}
              className="flex-row items-center">
               {/* Avatar */}
               <View className="bg-green-100 w-10 h-10 rounded-full items-center justify-center mr-3">
@@ -90,7 +90,10 @@ export default function AdminDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity 
+            className="flex-row items-center"
+            onPress={() => router.push('/Admin feat/Payment/PaymentScreen')}
+            >
               <View className="bg-blue-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="cash" size={18} color="#2563EB" />
               </View>
@@ -140,7 +143,10 @@ export default function AdminDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity 
+            className="flex-row items-center"
+            onPress={() => router.push('/Admin feat/Complaints/ComplaintsScreen')}
+            >
               <View className="bg-red-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="person" size={18} color="#DC2626" />
               </View>
@@ -183,7 +189,10 @@ export default function AdminDashboard() {
             <View className="h-[1px] bg-gray-100 mb-3" />
 
             {/* Content */}
-            <TouchableOpacity className="flex-row items-center">
+            <TouchableOpacity
+             className="flex-row items-center" 
+             onPress={() => router.push('/Admin feat/Notices/NoticeScreen')}
+            >
               <View className="bg-orange-100 w-10 h-10 rounded-full items-center justify-center mr-3">
                 <Ionicons name="notifications" size={18} color="#EA580C" />
               </View>

@@ -1,8 +1,9 @@
-import { View, Text, FlatList } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import MemberCard from "./MemberCard";
 
 export default function MembersListScreen() {
-  
   const members = [
     {
       id: "1",
@@ -28,12 +29,20 @@ export default function MembersListScreen() {
   ];
 
   return (
-    <View className="flex-1 bg-gray-50 px-4 pt-12">
-
+    <View className="flex-1 h-full bg-green-50 px-4 py-5">
       {/* Header */}
-      <Text className="text-2xl font-bold text-gray-900 mb-4">
-        Members
-      </Text>
+      <View className="mb-4 bg-green-200 rounded-lg shadow-sm">
+        <View className="flex-row justify-between items-center px-4 py-3">
+          <Text className="text-2xl font-bold text-gray-900">Members</Text>
+          <TouchableOpacity
+            onPress={() => router.push("./MemberAddForm")}
+            className="px-[8px] py-2 bg-green-600 rounded-full"
+            activeOpacity={0.7}
+          >
+            <Ionicons name="person-add" size={24} color="white" />
+          </TouchableOpacity>
+        </View>
+      </View>
 
       {/* Members List */}
       <FlatList
@@ -44,9 +53,10 @@ export default function MembersListScreen() {
           <MemberCard
             member={item}
             onPress={() => {
-              console.log("Clicked:", item.name);
-              // Later navigation
-              // navigation.navigate("MemberProfile", { member: item });
+              router.replace({
+                pathname: "./MemberProfile",
+                params: { id: item.id },
+              });
             }}
           />
         )}
