@@ -1,15 +1,22 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
+
+const authRoutes = require("./routes/authRoutes"); // 👈 add this
 
 const app = express();
 
-// middleware
 app.use(cors());
 app.use(express.json());
 
-// test route
+mongoose.connect("mongodb://127.0.0.1:27017/societyDB")
+.then(() => console.log("DB connected"))
+.catch(err => console.log(err));
+
+app.use("/api", authRoutes); // 👈 add this
+
 app.get("/", (req, res) => {
-  res.send("Backend chal raha hai 🚀");
+  res.send("API running...");
 });
 
 app.listen(5000, () => {
